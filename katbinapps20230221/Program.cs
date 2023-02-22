@@ -1,4 +1,8 @@
+using katbinapps20230221.Services;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddTransient<IMyTaskService, MyTaskService>();
 
 // Add services to the container.
 builder.Services.AddRazorPages();

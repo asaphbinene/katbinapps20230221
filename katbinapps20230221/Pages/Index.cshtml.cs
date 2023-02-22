@@ -1,20 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using katbinapps20230221.Models;
+using katbinapps20230221.Services;
 
 namespace katbinapps20230221.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        public List<MyTask> MyTasks;
+        private readonly IMyTaskService _taskService;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(IMyTaskService taskService) 
         {
-            _logger = logger;
+            _taskService=taskService;
         }
 
         public void OnGet()
         {
-
+            MyTasks = _taskService.GetMyTasks();
         }
     }
 }

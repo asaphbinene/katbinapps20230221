@@ -5,6 +5,30 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome to KATBIN Neterprises (Pta) Ltd</h1>
+  
+    <
+</div>
+<div class="text-center">
+    <h1 class="display-4">Welcome to KATBIN Enterprises (Pta) Ltd</h1>
     <p>Find more <a href="https://katbin.com/#home">building Web apps with in any language and host in any cloud or traditional host</a>.</p>
+    <h2 class="display-4">This is list of our notes taken</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">MyTask ID</th>
+                <th scope="col">MyTask Title</th>
+                <th scope="col">MyTask Detatils</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var MyTask in Model.MyTasks)
+            {
+                <tr>
+                    <th scope="row">@MyTask.MyTaskId</th>
+                    <td>@MyTask.MyTaskTitle</td>
+                    <td>@MyTask.MyTaskDetail</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
